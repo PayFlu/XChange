@@ -32,6 +32,7 @@ import org.knowm.xchange.service.trade.TradeService;
 import org.knowm.xchange.service.trade.params.CancelOrderByCurrencyPair;
 import org.knowm.xchange.service.trade.params.CancelOrderByIdParams;
 import org.knowm.xchange.service.trade.params.CancelOrderParams;
+import org.knowm.xchange.service.trade.params.DefaultTradeHistoryParamCurrencyPair;
 import org.knowm.xchange.service.trade.params.TradeHistoryParamCurrencyPair;
 import org.knowm.xchange.service.trade.params.TradeHistoryParamLimit;
 import org.knowm.xchange.service.trade.params.TradeHistoryParams;
@@ -200,7 +201,6 @@ public class BinanceTradeService extends BinanceTradeServiceRaw implements Trade
 
   @Override
   public boolean cancelOrder(String orderId) {
-
     throw new ExchangeException("You need to provide the currency pair to cancel an order.");
   }
 
@@ -224,6 +224,10 @@ public class BinanceTradeService extends BinanceTradeServiceRaw implements Trade
         recvWindow,
         getTimestamp());
     return true;
+  }
+
+  public UserTrades getTradeHistory(CurrencyPair pair) throws IOException {
+    return getTradeHistory(new DefaultTradeHistoryParamCurrencyPair(pair));
   }
 
   @Override
