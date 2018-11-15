@@ -15,6 +15,7 @@ import org.knowm.xchange.dto.trade.UserTrades;
 import org.knowm.xchange.exceptions.NotAvailableFromExchangeException;
 import org.knowm.xchange.service.trade.params.CancelOrderByIdParams;
 import org.knowm.xchange.service.trade.params.CancelOrderParams;
+import org.knowm.xchange.service.trade.params.DefaultTradeHistoryParamCurrencyPair;
 import org.knowm.xchange.service.trade.params.TradeHistoryParamCurrencyPair;
 import org.knowm.xchange.service.trade.params.TradeHistoryParamLimit;
 import org.knowm.xchange.service.trade.params.TradeHistoryParamOffset;
@@ -22,6 +23,7 @@ import org.knowm.xchange.service.trade.params.TradeHistoryParams;
 import org.knowm.xchange.service.trade.params.TradeHistoryParamsIdSpan;
 import org.knowm.xchange.service.trade.params.TradeHistoryParamsSorted;
 import org.knowm.xchange.service.trade.params.TradeHistoryParamsTimeSpan;
+import org.knowm.xchange.service.trade.params.orders.DefaultOpenOrdersParamCurrencyPair;
 import org.knowm.xchange.service.trade.params.orders.OpenOrdersParamCurrencyPair;
 import org.knowm.xchange.service.trade.params.orders.OpenOrdersParams;
 import org.knowm.xchange.utils.DateUtils;
@@ -34,8 +36,13 @@ public class YoBitTradeService extends YoBitTradeServiceRaw {
     super(exchange);
   }
 
+  public OpenOrders getOpenOrders(CurrencyPair pair) throws IOException {
+    return getOpenOrders(new DefaultOpenOrdersParamCurrencyPair(pair));
+  }
+
   @Override
   public OpenOrders getOpenOrders(OpenOrdersParams params) throws IOException {
+
     if (params instanceof OpenOrdersParamCurrencyPair) {
       BaseYoBitResponse response = activeOrders((OpenOrdersParamCurrencyPair) params);
 
@@ -48,7 +55,6 @@ public class YoBitTradeService extends YoBitTradeServiceRaw {
           orders.add(YoBitAdapters.adaptOrder(key.toString(), tradeData));
         }
       }
-
       return new OpenOrders(orders);
     }
 
@@ -79,6 +85,10 @@ public class YoBitTradeService extends YoBitTradeServiceRaw {
     } else {
       return false;
     }
+  }
+
+  public UserTrades getTradeHistory(CurrencyPair pair) throws IOException {
+    return getTradeHistory(new DefaultTradeHistoryParamCurrencyPair(pair));
   }
 
   @Override
