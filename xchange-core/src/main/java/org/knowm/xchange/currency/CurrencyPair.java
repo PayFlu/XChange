@@ -72,6 +72,7 @@ public class CurrencyPair implements Comparable<CurrencyPair>, Serializable {
   public static final CurrencyPair ETH_TRY = new CurrencyPair(Currency.ETH, Currency.TRY);
 
   public static final CurrencyPair BCH_USD = new CurrencyPair(Currency.BCH, Currency.USD);
+  public static final CurrencyPair BCH_USDT = new CurrencyPair(Currency.BCH, Currency.USDT);
   public static final CurrencyPair BCH_AUD = new CurrencyPair(Currency.BCH, Currency.AUD);
   public static final CurrencyPair BCH_CAD = new CurrencyPair(Currency.BCH, Currency.CAD);
   public static final CurrencyPair BCH_GBP = new CurrencyPair(Currency.BCH, Currency.GBP);
@@ -113,6 +114,7 @@ public class CurrencyPair implements Comparable<CurrencyPair>, Serializable {
   public static final CurrencyPair LTC_AUD = new CurrencyPair(Currency.LTC, Currency.AUD);
   public static final CurrencyPair LTC_GBP = new CurrencyPair(Currency.LTC, Currency.GBP);
   public static final CurrencyPair LTC_USD = new CurrencyPair(Currency.LTC, Currency.USD);
+  public static final CurrencyPair LTC_USDT = new CurrencyPair(Currency.LTC, Currency.USDT);
   public static final CurrencyPair LTC_KRW = new CurrencyPair(Currency.LTC, Currency.KRW);
   public static final CurrencyPair LTC_CNY = new CurrencyPair(Currency.LTC, Currency.CNY);
   public static final CurrencyPair LTC_RUR = new CurrencyPair(Currency.LTC, Currency.RUR);
@@ -190,6 +192,10 @@ public class CurrencyPair implements Comparable<CurrencyPair>, Serializable {
   public static final CurrencyPair BTC_XDC = new CurrencyPair(Currency.BTC, Currency.XDC);
   public static final CurrencyPair BTC_PPC = new CurrencyPair(Currency.BTC, Currency.PPC);
   public static final CurrencyPair STR_BTC = new CurrencyPair(Currency.STR, Currency.BTC);
+
+  // USDT
+  public static final CurrencyPair USDT_BTC = new CurrencyPair(Currency.USDT, Currency.BTC);
+  public static final CurrencyPair USDT_ETH = new CurrencyPair(Currency.USDT, Currency.ETH);
 
   // LTC
   public static final CurrencyPair LTC_HKD = new CurrencyPair(Currency.LTC, Currency.HKD);
@@ -269,6 +275,7 @@ public class CurrencyPair implements Comparable<CurrencyPair>, Serializable {
   public static final CurrencyPair ICN_ETH = new CurrencyPair(Currency.ICN, Currency.ETH);
 
   public static final CurrencyPair DASH_USD = new CurrencyPair(Currency.DASH, Currency.USD);
+  public static final CurrencyPair DASH_USDT = new CurrencyPair(Currency.DASH, Currency.USDT);
   public static final CurrencyPair DASH_EUR = new CurrencyPair(Currency.DASH, Currency.EUR);
   public static final CurrencyPair DASH_BTC = new CurrencyPair(Currency.DASH, Currency.BTC);
   public static final CurrencyPair DASH_TRY = new CurrencyPair(Currency.DASH, Currency.TRY);
@@ -290,6 +297,7 @@ public class CurrencyPair implements Comparable<CurrencyPair>, Serializable {
   public static final CurrencyPair EOS_BTC = new CurrencyPair(Currency.EOS, Currency.BTC);
 
   public static final CurrencyPair BCC_USD = new CurrencyPair(Currency.BCC, Currency.USD);
+  public static final CurrencyPair BCC_USDT = new CurrencyPair(Currency.BCC, Currency.USDT);
   public static final CurrencyPair BCC_BTC = new CurrencyPair(Currency.BCC, Currency.BTC);
 
   public static final CurrencyPair BAT_USD = new CurrencyPair(Currency.BAT, Currency.USD);
